@@ -22,115 +22,115 @@ export default class App extends React.Component {
                 orientation: isPortrait() ? 'portrait' : 'landscape'
             });
         });
-    }
 
-  onPress = (buttonValue: string) => {
-    if(this.state.count == '0' || this.state.count == undefined){
-        this.setState({
-          count: buttonValue
-        });
-    }else{
-        this.setState({
-            count: this.state.count + buttonValue
-        });
-    }
-  };
-
-    onACPress = () => {
-        this.setState({
-             count: '0'
-        });
-    }
-
-    onEQPress = () => {
-        const text = this.state.count
-        this.setState({
-             count: eval(text)
-        });
-    }
-
-    onScPress = (buttonValue: string) => {
-        let text = this.state.count
-        switch (buttonValue){
-            case 'sqrt':
-                this.setState({
-                    count: Math.sqrt(text)
-                });
-                break;
-            case '!':
-                if (text === 0) this.setState({
-                    count: 1
-                });
-                let f = 1;
-                for (let i = 1; i < text; i++) {
-                    f = f * (i + 1);
-                }
-                this.setState({
-                    count: f
-                });
-                break;
-            case 'e^x':
-                this.setState({
-                    count: Math.exp(text)
-                });
-                break;
-            case '10^x':
-                this.setState({
-                    count: Math.pow(10, text)
-                });
-                break;
-            case 'ln':
-                this.setState({
-                    count: Math.log(text)
-                });
-                break;
-            case 'log10':
-                this.setState({
-                    count: Math.log10(text)
-                });
-                break;
-            case 'e':
-                this.setState({
-                    count: Math.E
-                });
-                break;
-            case 'x^2':
-                this.setState({
-                    count: Math.pow(text, 2)
-                });
-                break;
-            case 'pi':
-                this.setState({
-                    count: Math.PI
-                });
-                break;
-            case 'x^3':
-                this.setState({
-                    count: Math.pow(text, 3)
-                });
-                break;
-            case '%':
-                this.setState({
-                    count: (text * 100) / 100
-                });
-                break;
-            case '+/-':
-                if(Array.from(text[0]) == '-'){
-                    this.setState({
-                        count: text.substring(1)
-                    });
-                }else{
-                    this.setState({
-                        count: '-' + text
-                    });
-                }
-                break;
-            default:
-                Alert.alert("err");
+    onPress = (buttonValue: string) => {
+        if(this.state.count == '0' || this.state.count == undefined){
+            this.setState({
+              count: buttonValue
+            });
+        }else{
+            this.setState({
+                count: this.state.count + buttonValue
+            });
         }
+      };
+
+        onACPress = () => {
+                this.setState({
+                     count: '0'
+                });
+            };
+
+        onEQPress = () => {
+                const text = this.state.count
+                this.setState({
+                     count: eval(text)
+                });
+            };
+        onScPress = (buttonValue: string) => {
+                let text = this.state.count
+                switch (buttonValue){
+                    case 'sqrt':
+                        this.setState({
+                            count: Math.sqrt(text)
+                        });
+                        break;
+                    case '!':
+                        if (text === 0) this.setState({
+                            count: 1
+                        });
+                        let f = 1;
+                        for (let i = 1; i < text; i++) {
+                            f = f * (i + 1);
+                        }
+                        this.setState({
+                            count: f
+                        });
+                        break;
+                    case 'e^x':
+                        this.setState({
+                            count: Math.exp(text)
+                        });
+                        break;
+                    case '10^x':
+                        this.setState({
+                            count: Math.pow(10, text)
+                        });
+                        break;
+                    case 'ln':
+                        this.setState({
+                            count: Math.log(text)
+                        });
+                        break;
+                    case 'log10':
+                        this.setState({
+                            count: Math.log10(text)
+                        });
+                        break;
+                    case 'e':
+                        this.setState({
+                            count: Math.E
+                        });
+                        break;
+                    case 'x^2':
+                        this.setState({
+                            count: Math.pow(text, 2)
+                        });
+                        break;
+                    case 'pi':
+                        this.setState({
+                            count: Math.PI
+                        });
+                        break;
+                    case 'x^3':
+                        this.setState({
+                            count: Math.pow(text, 3)
+                        });
+                        break;
+                    case '%':
+                        this.setState({
+                            count: (text * 100) / 100
+                        });
+                        break;
+                    case '+/-':
+                        if(Array.from(text[0]) == '-'){
+                            this.setState({
+                                count: text.substring(1)
+                            });
+                        }else{
+                            this.setState({
+                                count: '-' + text
+                            });
+                        }
+                        break;
+                    default:
+                        Alert.alert("err");
+                }
 
 
+            };
     }
+
 
   render() {
 
